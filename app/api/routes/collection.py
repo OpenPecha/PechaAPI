@@ -4,5 +4,10 @@ router = APIRouter()
 
 
 @router.get("/")
-def collection():
-    return {"message": "This is Collection Endpoint"}
+def collection(id: str, page: int = None, nav: str = "children"):
+    return {
+        "message": "This is Collection Endpoint",
+        "id": id,
+        "page": page,
+        "nav": nav,
+    }
